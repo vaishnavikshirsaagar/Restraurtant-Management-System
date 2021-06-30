@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=KoHo&display=swap');
+*{
+    font-family: 'KoHo', sans-serif;
+}
+#slider{
+    margin-top: 60px;
+}
+.bg-theme{
+    background-color: #F87107;
+}
+.navbar ul li:last-child{
+    width: 120px;
+    align-self: center;
+}
+#slider .carousel img{
+    height: 45vw;
+}
+.carousel-indicators li{
+    border-radius: 50%;
+    height: 20px !important;
+    width: 20px !important;
+}
+#about{
+    background-image: url('./img/aboutImg.jpg');
+    width:100%;
+    padding:40px;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3px;
+}
+.aboutContain{
+    background-color: #ffffffde;
+    padding: 50px;
+    height: auto;
+}
+.aboutContain p{
+    font-size: 18px ;
+    text-align: justify;
+    font-weight: 600;
+}
+
+.heading{
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+#menu img:hover{
+    transform: scale(1.1);
+    transition: all 1s;
+}
+#visit img{
+    height: 400px;
+}
+#contact .img{
+    height: 28vw;
+}
+.contactForm .form-control{
+    width: 40%;
+}
+.social-media ul li{
+    float: left;
+}

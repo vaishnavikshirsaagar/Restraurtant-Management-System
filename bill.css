@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+  }
+  .billProd {
+    height: 500px;
+    background-color: #ccc;
+    border: 2px dashed #000;
+    padding: 20px;
+    margin: 40px;
+  }
+  .billProd button {
+    padding: 5px;
+    width: 140px;
+    margin: 5px;
+  }
+  .billGen {
+    border: 2px dashed #000;
+    height: auto;
+    margin: 40px;
+    padding: 20px;
+    position: relative;
+  }
+  .bill {
+    border-top: 2px dashed #000;
+    padding: 30px 0px;
+  }
+  .print {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .bill ol {
+    list-style: none;
+  }
+  .bill ol li {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: 1px dashed black;
+  }
+  

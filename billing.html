@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./bill.css">
+    <title>BILLING SOFTWARE</title>
+</head>
+<body>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-4">
+            <label for="">Customer Name</label> <input type="text" class="form-control" id="custname" onchange="show()">
+          </div>
+          <div class="col-4">
+            <label for="">Bill Number</label> <input type="text" class="form-control"id="custno" >
+          </div>
+          <div class="col-4">
+            <label for="">Date & Time</label> <input type="text" class="form-control" id="custdate" onchange="display()">
+          </div>
+      </div>
+   
+
+      <div class="row">
+          <div class="col-8">
+            <div class="billProd">
+                <h3 align="center">Total Products Available</h3>
+                <table>
+                    <tr>
+                        <td><button onclick="add('Burger',100)">Burger 100 <i class="fa fa-inr"></i></button></td>
+                        <td><button onclick="add('Pizza',200)">Pizza 200<i class="fa fa-inr"></i></button></td>
+                        <td><button onclick="add('Fries',200)">Fries 200<i class="fa fa-inr"></i></button></td>
+                        <td><button onclick="add('Paneer',200)">Paneer 200 <i class="fa fa-inr"></i> </button></td>
+                        <td><button onclick="add('Pasta',200)">Pasta 200 <i class="fa fa-inr"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="add('Burger',200)">Burger 200 <i class="fa fa-inr"></i></button></td>
+                        <td><button onclick="add('Pizza',200)">Pizza  200 <i class="fa fa-inr"></i></button></td>
+                        <td><button onclick="add('Fries',200)">Fries 200 <i class="fa fa-inr"></i></button></td>
+                        <td><button onclick="add('Paneer',200)">Paneer 200 <i class="fa fa-inr"></i> </button></td>
+                        <td><button onclick="add('Pasta',200)">Pasta 200 <i class="fa fa-inr"></i></button></td>
+                    </tr>
+                </table>
+              </div>
+          </div>
+          <div class="col-4">
+            <div class="billGen">
+                <h5 align="center">Bill No : #10232</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <h6 id="cstnm"></h6>
+                    </div>
+                    <div class="col-6">
+                        <h6 id="dttime"></h6>
+                    </div>
+                </div>
+                <div class="bill">
+                    <ol id="list">
+                        
+                    </ol>
+                </div>
+                <b>Total:<span id="Total"></span></b>
+                <button class="print btn btn-success">
+                    Print
+                </button>
+            </div>
+          
+          </div>
+      </div>
+      
+  </div>
+  <script>
+     var sum = 0;
+      function add(product,price){
+          var str = "<li>"+product+"-"+price+"<i class='fa fa-inr'></li>";
+       document.getElementById("list").innerHTML += str;
+       sum = price + sum;
+       document.getElementById("Total").innerHTML = sum;
+      }
+      function show(){
+          var nm = document.getElementById('custname').value;
+          document.getElementById('cstnm').innerHTML = nm;
+      }
+      function dispaly(){
+        const d = new Date();
+        document.getElementById("dttime").innerHTML = d.getTime();
+      }
+      
+  </script>
+</body>
+</html>

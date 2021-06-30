@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div class="jumbotron">
+          <table border="5"  cellspacing="0">
+              <tr>
+                  <td colspan="5"><input type="text" class="w-100 form-control" id="cal"></td>
+              </tr>
+              <tr>
+                  <td><button onclick="show('1')">1</button></td>
+                  <td><button onclick="show('2')">2</button></td>
+                  <td><button onclick="show('3')">3</button></td>
+                  <td><button onclick="show('4')">4</button></td>
+                  <td><button onclick="show('+')">+</button></td>
+              </tr>
+              <tr>
+                  <td><button onclick="show('5')">5</button></td>
+                  <td><button onclick="show('6')">6</button></td>
+                  <td><button onclick="show('7')">7</button></td>
+                  <td><button onclick="show('8')">8</button></td>
+                  <td><button onclick="calculator()">=</button></td>
+              </tr>
+              <tr>
+                  <td><button onclick="show('9')">9</button></td>
+                  <td><button onclick="show('0')">0</button></td>
+                  <td><button onclick="show('*')">*</button></td>
+                  <td><button onclick="show('/')">/</button></td>
+                  <td><button onclick="show('-')">-</button></td>
+              </tr>
+              <tr>
+                  <td colspan="5">
+                      <button onclick="clr()" class="w-100">CLR</button>
+                  </td>
+              </tr>
+          </table>
+        </div>
+         </center>
+          <script>
+              var textbox = document.getElementById('cal').value;
+             function show(val){
+                  textbox += val;
+             }
+             function calculator(){
+                 var res = document.getElementById("cal").value;
+                 var output = eval(res);
+                 textbox = output;
+             }
+             function clr() {
+                 textbox = "0";
+             }
+          </script>
+    
+</body>
+</html>
