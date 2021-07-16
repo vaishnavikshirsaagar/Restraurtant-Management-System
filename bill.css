@@ -37,4 +37,19 @@
     background-color: #ccc;
     border: 1px dashed black;
   }
+
+  @media print{
+    .hideprint{
+        display: none;
+    }
+    .col-4{
+      width: 100% !important;
+    }
+  
+  }
+  .btnrem{
+    font-size: 16px !important;
+    background-color: transparent;
+    border: none;
+  } 
   

@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container-fluid">
-      <div class="row">
+      <div class="row hideprint">
           <div class="col-4">
             <label for="">Customer Name</label> <input type="text" class="form-control" id="custname" onchange="show()">
           </div>
@@ -24,8 +24,8 @@
       </div>
    
 
-      <div class="row">
-          <div class="col-8">
+      <div class="row ">
+          <div class="col-8 hideprint">
             <div class="billProd">
                 <h3 align="center">Total Products Available</h3>
                 <table>
@@ -63,7 +63,7 @@
                     </ol>
                 </div>
                 <b>Total:<span id="Total"></span></b>
-                <button class="print btn btn-success">
+                <button class="print btn btn-success hideprint" onclick="printshow()">
                     Print
                 </button>
             </div>
@@ -75,7 +75,7 @@
   <script>
      var sum = 0;
       function add(product,price){
-          var str = "<li>"+product+"-"+price+"<i class='fa fa-inr'></li>";
+        var str = "<div id='p"+product+"'><li>"+product+" - "+price+" <i class='fa fa-inr'></i><button onclick=remove('"+product+"') class=' btnrem float-right hideprint'> <i class='fa fa-times'></i> </button></li></div>";
        document.getElementById("list").innerHTML += str;
        sum = price + sum;
        document.getElementById("Total").innerHTML = sum;
@@ -87,6 +87,12 @@
       function dispaly(){
         const d = new Date();
         document.getElementById("dttime").innerHTML = d.getTime();
+      }
+      function remove(product){
+        document.getElementById("p"+product).innerHTML = "";
+      }
+      function printshow(){
+          window.print();
       }
       
   </script>
